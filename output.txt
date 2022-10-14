@@ -1,0 +1,17 @@
+1.123456 -- Correct
+2.234567 -- Correct
+3.000333 -- Correct
+4.0333.1121 -- Correct
+5.2424,423423 -- Correct
+6.24,24,423423 -- Not correct
+7.24.24,423423 -- Not correct
+8.1.17E-08 -- Correct
+9.1.17E08 -- Correct
+10.1.1.7E08 -- Not correct
+11.1.17E+08 -- Not correct
+12.1.17E,08 -- Not correct
+13.1.17EE+08 -- Not correct
+14.1.17Ee+08 -- Not correct
+15.1.17Ee++8 -- Not correct
+16.*90875 -- Not correct
+17.!»№;%?* -- Not correct
