@@ -16,16 +16,19 @@ public class Regular {
                stringList.add(line);
            }
            input.close();
-           Pattern pattern = Pattern.compile("^-?\\d+[.|,]?\\d+(?:[eE]-?\\d+)?$");
            FileWriter output = new FileWriter("output.txt");
-           int count = 1;
           for (String item: stringList){
-              Matcher mather = pattern.matcher(item);
-              if (mather.find()) output.write(count + "." + item + " -- Correct\n");
-              else output.write(count + "." + item + " -- Not correct\n");
-              count++;
+              if (RegularMatch(item)) output.write(item + " -- Correct\n");
+              else output.write(item + " -- Not correct\n");
           }
           output.close();
+
+       }
+       public static boolean RegularMatch(String item) throws IOException {
+           Pattern pattern = Pattern.compile("^-?\\d+[.|,]?\\d+(?:[eE]-?\\d+)?$");
+           Matcher mather = pattern.matcher(item);
+           if (mather.find()) return true;
+           else return false;
 
        }
 }
